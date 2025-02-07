@@ -27,4 +27,4 @@ python "temp.py"
 timeout /t 5 /nobreak > nul 
 del temp.py 
 
-exit
+pause
