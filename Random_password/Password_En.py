@@ -5,7 +5,7 @@ from random import *
 
 def mot_de_passe(nbr_tour:int=1)->str:
     """
-    Donne un mot de passe aléatoire
+    Give a random password
     """
     alphabet='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVQWXYZ0123456789?,.;/:§!%ù¨^£$µ*+=°)àç_è-("é&)'
     mdp=''
@@ -14,7 +14,7 @@ def mot_de_passe(nbr_tour:int=1)->str:
             mdp=mdp+alphabet[randint(0,92)]
     return mdp
 
-a=input("Donner le nombre de tour que vous voulez")
+a=input("How many lap of the function do you want?")
 a=int(a)
 
 print(mot_de_passe(a))
