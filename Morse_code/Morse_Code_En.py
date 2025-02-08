@@ -4,19 +4,19 @@
 import tkinter as tk
 from tkinter import messagebox
 
-choix=input("Quelle application voulez vous utiliser ? 1 pour le crypteur et 2 pour le décrypteur ")
+choix=input("What app do you want to use? 1 to encrypt and 2 to decrypt ")
 choix=str(choix)
 
 if choix=='1':
     word=[]
 
-    word1=input("Mettre votre phrase : ")
+    word1=input("Your sentence: ")
     word1=str(word1)
 
     for i in range(len(word1)):
         word.append(word1[i])
 
-    print('Votre mot est : ',word1)
+    print('Your word is: ',word1)
 
     def crypteur():
         wordcrypter=[]
@@ -127,7 +127,7 @@ if choix=='1':
     for i in range(len(wordcrypter__)):
         wordcrypter_=wordcrypter_+wordcrypter__[i]
 
-    print('Votre mot crypter est :',wordcrypter_)
+    print('Your word encrypt is: ',wordcrypter_)
 
     class Win:
         def popup(self, title="", sentence=""):
@@ -139,15 +139,15 @@ if choix=='1':
             root.destroy()
 
     win=Win()
-    win.popup("Morse crypté", f"Le morse crypté : {wordcrypter_}")
+    win.popup("Morse crypté", f"The encrypt morse is: {wordcrypter_}")
 
 elif choix=='2':
     wordcrypter=[]
 
-    wordcrypter1=input("Mettez votre code morse avec un espace entre chaque lettres sans ponctuation : ")
+    wordcrypter1=input("Put your morse code with a space between each letters and without punctuation: ")
     wordcrypter1=str(wordcrypter1)
 
-    print('Votre mot est : ',wordcrypter1)
+    print('Your word is: ',wordcrypter1)
 
     for i in range(len(wordcrypter1)):
         wordcrypter.append(wordcrypter1[i])
@@ -281,7 +281,7 @@ elif choix=='2':
         word_=word_+word__[i]
 
 
-    print('Votre mot décrypter est : ',word_)
+    print('Your word decrypt is: ',word_)
 
     class Win:
         def popup(self, title="", sentence=""):
@@ -293,10 +293,10 @@ elif choix=='2':
             root.destroy()
 
     win=Win()
-    win.popup("Morse décrypté", f"Le morse décrypté : {word_}")
+    win.popup("Morse décrypté", f"The decrypt word is: {word_}")
 
 else:
-    print('Erreur sur le choix. Choix possibles 1 ou 2.')
+    print('Error on the choice. Possible input : 1 and 2')
 
     class Win:
         def popup(self, title="", sentence=""):
@@ -308,4 +308,4 @@ else:
             root.destroy()
 
     win=Win()
-    win.popup("Erreur", "Erreur sur le choix. Choix possibles 1 ou 2.")
+    win.popup("Error", "Error on the choice. Possible input : 1 and 2")
