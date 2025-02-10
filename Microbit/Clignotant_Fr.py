@@ -17,7 +17,7 @@ def clignotant_droit():
 
 def clignotant_gauche():
     """
-    Crée un effet de clignotant vers la droite sur le pavé de LED de la carte Microbit
+    Crée un effet de clignotant vers la gauche sur le pavé de LED de la carte Microbit
     """
     for i in range(3):
         for x in range(5):
