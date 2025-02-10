@@ -1,4 +1,4 @@
-# Created by Gabypotter08 in Python 3.7 
+# Created by Gabypotter08, the 10/02/2025 in Python 3.7 
 # Coding utf-8
 
 import tkinter as tk
@@ -19,6 +19,9 @@ if choix=='1':
     print('Your word is: ',word1)
 
     def crypteur():
+        """
+        Encrypt in morse the word you input
+        """
         wordcrypter=[]
         for i in range(len(word)):
             if word[i]=='a' or word[i]=='A':
@@ -155,6 +158,9 @@ elif choix=='2':
     lengh=len(wordcrypter)
 
     def decrypteur():
+        """
+        Decrypt the morse code you input
+        """
         word=[]
         i=0
         while i < lengh:
