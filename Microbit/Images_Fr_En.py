@@ -1,3 +1,6 @@
+# Created by Gabypotter08, the 10/02/2025 in Python 3.7
+# Coding utf-8
+
 from microbit import *
 
 #To show the images delete '"""'
