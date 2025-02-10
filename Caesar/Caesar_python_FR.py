@@ -8,8 +8,6 @@ min=[]
 
 phrase=input("Phrase à crypter : ")
 phrase_caesar=''
-lettre_indiciel=''
-phrase_indiciel=''
 
 deplacement=input("Avec combien de caractères de différence voulez vous crypter votre code morse ? Attention pas plus de 26 caractères ! ")
 deplacement=int(deplacement)
