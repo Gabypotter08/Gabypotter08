@@ -1,10 +1,13 @@
-# Created by Gabypotter08 in Python 3.7
+# Created by Gabypotter08, the 10/02/2025 in Python 3.7
 # Coding utf-8
 
 from microbit import *
 
 
 def right_indicator():
+    """
+    Create an effect on the LED panel making a right indicator
+    """
     for i in range(3):
         for x in range(5):
             for y in range(5):
@@ -13,6 +16,9 @@ def right_indicator():
         display.clear()
 
 def left_indicator():
+    """
+    Create an effect on the LED panel making a left indicator
+    """
     for i in range(3):
         for x in range(5):
             for y in range(5):
