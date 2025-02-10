@@ -7,8 +7,6 @@ min=[]
 
 phrase=input("Sentence : ")
 phrase_caesar=''
-lettre_indiciel=''
-phrase_indiciel=''
 
 deplacement=input("How much letters is the mooving ?")
 deplacement=int(deplacement)
