@@ -1,10 +1,13 @@
-# Created by Gabypotter08 in Python 3.7
+# Created by Gabypotter08, the 10/02/2025 in Python 3.7
 # Coding utf-8
 
 from microbit import *
 
 
 def clignotant_droit():
+    """
+    Crée un effet de clignotant vers la droite sur le pavé de LED de la carte Microbit
+    """
     for i in range(3):
         for x in range(5):
             for y in range(5):
@@ -13,6 +16,9 @@ def clignotant_droit():
         display.clear()
 
 def clignotant_gauche():
+    """
+    Crée un effet de clignotant vers la droite sur le pavé de LED de la carte Microbit
+    """
     for i in range(3):
         for x in range(5):
             for y in range(5):
