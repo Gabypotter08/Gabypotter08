@@ -1,3 +1,6 @@
+# Created by Gabypotter08, the 11/02/2025 in Python 3.7
+# Coding utf-8
+
 import tkinter as tk
 from tkinter import messagebox
 
