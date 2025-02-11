@@ -311,3 +311,35 @@ def mot_de_passe(nbr_tour:int=1)->str:
         for i in range(randint(0,3)):
             mdp=mdp+alphabet[randint(0,92)]
     return mdp
+
+def max_min(liste:list, a:bool=True)->float:
+    """
+    give the maximum or the minimum of a list
+    if a==True, give the max
+    if a==False, give the min
+    """
+    max_min=liste[0]
+    if a:
+        for i in range(len(liste)):
+            if max_min > liste[i]:
+                assert max_min>liste[i]
+            else:
+                max_min=liste[i]
+    else:
+        for i in range(len(liste)):
+            if max_min < liste[i]:
+                assert max_min<liste[i]
+            else:
+                max_min=liste[i]
+    return max_min
+
+def average(liste:list):
+    """
+    Give the average of a list
+    """
+    nbr_rating=len(liste)
+    total_rating=0
+    for i in range(len(liste)):
+        total_notes+=liste[i]
+    average=total_rating/nbr_rating
+    return average
