@@ -26,3 +26,13 @@ while True:
     display.scroll(c)
     print(c)
     sleep(200)
+
+""" 
+#an other way
+while True :
+    sleep (10000)
+    var = button_b.get_presses() + button_a.get_presses()
+    display.show(var)
+    sleep(1000)
+    display.clear()
+"""
