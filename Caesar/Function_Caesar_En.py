@@ -2,6 +2,9 @@
 # Coding utf-8
 
 def caesar(sentance:str, deplacement:int=1):
+  """
+  Crypt your sentance with a deplacement of : deplacement
+  """
   alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   min=[]
   phrase_caesar=''
@@ -12,3 +15,4 @@ def caesar(sentance:str, deplacement:int=1):
       else:
           phrase_caesar=phrase_caesar + alphabet[alphabet.index(phrase[i])+deplacement]
   return phrase_caesar
+
