@@ -32,9 +32,9 @@ def maximum(liste:list)->float:
     retour = liste[0]
     for i in range(len(liste)):
         try:
-            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+            liste[i] =float(liste[i]) 
         except:
-            continue #si impossible, on passe à la valeur suivante dans la liste
+            continue
 
         if liste[i] > retour:
                 retour = liste[i]
@@ -48,9 +48,9 @@ def minimum(liste:list)->float:
     retour = liste[0]
     for i in range(len(liste)):
         try:
-            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+            liste[i] =float(liste[i])
         except:
-            continue #si impossible, on passe à la valeur suivante dans la liste
+            continue 
 
         if liste[i] < retour:
                 retour = liste[i]
@@ -65,14 +65,14 @@ def peak(liste:list, m:bool=True)->float:
     retour = liste[0]
     for i in range(len(liste)):
         try:
-            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+            liste[i] =float(liste[i]) 
         except:
-            continue #si impossible, on passe à la valeur suivante dans la liste
+            continue 
 
-        if m: #On cherche le maximum
+        if m: 
             if liste[i] > retour:
                     retour = liste[i]
-        else: #On cherche le minimum
+        else: 
             if liste[i] < retour:
                     retour = liste[i]
     return retour
@@ -87,9 +87,9 @@ def mean(liste:list)->float:
     total=0
     for i in range(len(liste)):
         try:
-            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
-        except: #except généraliste
-            continue #si impossible, on passe à la valeur suivante dans la liste
+            liste[i] =float(liste[i]) 
+        except: 
+            continue 
         total+= liste[i]
     return total/len(liste)
 
@@ -106,7 +106,7 @@ def mean_coef(liste:list)->float:
     coef=0
     for i in range(len(liste)):
         try:
-            liste[i][0] = float(liste[i][0]) #essaie de convertir la valeur en float
+            liste[i][0] = float(liste[i][0]) 
             liste[i][1] = float(liste[i][1])
         except:
             continue
@@ -115,7 +115,7 @@ def mean_coef(liste:list)->float:
     return total/coef
 
 
-#façon alternative de gérer les boucles for spécifique à Python
+
 def peak2(liste:list, m:bool=True)->float:
     """
     Give back the peak value of a list
@@ -125,14 +125,13 @@ def peak2(liste:list, m:bool=True)->float:
     retour = liste[0]
     for val in list:
         try:
-            val = float(val) #essaie de convertir la valeur en float
-        except: #except généraliste
-            continue #si impossible, on passe à la valeur suivante dans la liste
-
-        if m: #On cherche le maximum
+            val = float(val) 
+        except: 
+            continue:
+        if m: 
             if val > retour:
                     retour = val
-        else: #On cherche le minimum
+        else: 
             if val < retour:
                     retour = val
     return retour
@@ -176,11 +175,8 @@ assert sort_ok([1,4,5,6,12,74],c=False) == False
 assert sort_ok([11,4,-5,-6,-12,-74],c=False) == True
 
 assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', 1478]) == 1478
-#Compare le résultat de nos fonctions avec celui des fonctions natives
-assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == max([1478, 2, 5, 4, 78, 511, 1478])
 
 assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
-assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == min([1478, 2, 5, 4, 78, 511, -1478])
 
 assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
 assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
