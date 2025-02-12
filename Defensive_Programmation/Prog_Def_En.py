@@ -7,38 +7,6 @@ Defensive programming and good practice in python
 Exemples with : Verify if a list is sort, look for the max and min, everage calculation
 """
 
-
-"""
-#exemple using assert 
-def my_function(a: str='a', b: str='b', c: int=3, d:bool=False)->str:
-    assert type(a)==str and type(b)==str, "Need a str" #Assert, follow by an logic expression evaluated to True follow by an error message if evaluated to False
-    assert type(c)==int, "Need an int"
-    assert type(d)==bool, "Need a bool"
-    if d== True:
-        resultat=a+b
-    else:
-        resultat=a*c
-    return resultat
-"""
-
-#Sort from least to most
-
-"""
-def tri_ok(liste:list)->bool:
-    #""
-    Give back True if the list is sort
-    #""
-    for i in range(len(liste)-1):
-        if liste[i+1]<liste[i]:
-            return False
-    return True
-
-assert tri_ok([1,4,5,6,12,74]) == True
-assert tri_ok([1,4,5,6,12,-4]) == False
-"""
-
-#Sort
-
 def tri_ok(liste:list, c:bool=True)->bool:
     #DOCSTRINGS
     """
@@ -56,39 +24,176 @@ def tri_ok(liste:list, c:bool=True)->bool:
                 return False
     return True
 
+def maximum(liste:list)->float:
+    """
+    Renvoie la valeur maxi d'une liste de valeurs numériques
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if liste[i] > retour:
+                retour = liste[i]
+    return retour
+
+def minimum(liste:list)->float:
+    """
+    Renvoie la valeur mini d'une liste de valeurs numériques
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if liste[i] < retour:
+                retour = liste[i]
+    return retour
+
+def extremum(liste:list, m:bool=True)->float:
+    """
+    Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
+    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if m: #On cherche le maximum
+            if liste[i] > retour:
+                    retour = liste[i]
+        else: #On cherche le minimum
+            if liste[i] < retour:
+                    retour = liste[i]
+    return retour
+
+
+
+def moyenne(liste:list)->float:
+    """
+    Renvoie la moyenne des valeurs d'une liste
+    """
+    assert len(liste)>0, "La liste est vide"
+    total=0
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except: #except généraliste
+            continue #si impossible, on passe à la valeur suivante dans la liste
+        total+= liste[i]
+    return total/len(liste)
+
+def moyenne2(liste:list)->float:
+    return sum(liste)/len(liste)
+
+def moyenne_coef(liste:list)->float:
+    """
+    Renvoie la moyenne coefficientée des valeursd e la liste
+    valeur de la liste = paire note, coef
+    """
+    assert len(liste)>0, "La liste est vide"
+    total=0
+    coef=0
+    for i in range(len(liste)):
+        try:
+            liste[i][0] = float(liste[i][0]) #essaie de convertir la valeur en float
+            liste[i][1] = float(liste[i][1])
+        except:
+            continue
+        total += liste[i][0] * liste[i][1]
+        coef += liste[i][1]
+    return total/coef
+
+
+#façon alternative de gérer les boucles for spécifique à Python
+def extremum2(liste:list, m:bool=True)->float:
+    """
+    Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
+    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for val in list:
+        try:
+            val = float(val) #essaie de convertir la valeur en float
+        except: #except généraliste
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if m: #On cherche le maximum
+            if val > retour:
+                    retour = val
+        else: #On cherche le minimum
+            if val < retour:
+                    retour = val
+    return retour
+
+def moyenne3(liste:list)->float:
+    """
+    Renvoie la moyenne des valeurs d'une liste
+    """
+    assert len(liste)>0, "La liste est vide"
+    total=0
+    for note in liste:
+        try:
+            note=float(note)
+        except:
+            continue
+        total+= note
+    return total/len(liste)
+
+def moyenne_coef2(liste:list)->float:
+    """
+    Renvoie la moyenne coefficientée des valeursd e la liste
+    valeur de la liste = paire note, coef
+    """
+    assert len(liste)>0, "La liste est vide"
+    total=0
+    coef=0
+    for note,cf in liste:
+        try:
+            note= float(note)
+            cf= float(cf)
+        except:
+            continue
+        total += note*cf
+        coef += cf
+    return total/coef
+
+
+
+
+
+
+
+
 assert tri_ok([1,4,5,6,12,74]) == True
 assert tri_ok([1,4,5,6,12,-4]) == False
 assert tri_ok([1,4,5,6,12,74],c=False) == False
 assert tri_ok([11,4,-5,-6,-12,-74],c=False) == True
 
-def max_min(liste:list, a:bool=True)->float:
-    """
-    give the maximum or the minimum of a list
-    if a==True, give the max
-    if a==False, give the min
-    """
-    max_min=liste[0]
-    if a:
-        for i in range(len(liste)):
-            if max_min > liste[i]:
-                assert max_min>liste[i]
-            else:
-                max_min=liste[i]
-    else:
-        for i in range(len(liste)):
-            if max_min < liste[i]:
-                assert max_min<liste[i]
-            else:
-                max_min=liste[i]
-    return max_min
+assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', 1478]) == 1478
+#Compare le résultat de nos fonctions avec celui des fonctions natives
+assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == max([1478, 2, 5, 4, 78, 511, 1478])
 
-def average(liste:list):
-    """
-    Give the average of a list
-    """
-    nbr_rating=len(liste)
-    total_rating=0
-    for i in range(len(liste)):
-        total_notes+=liste[i]
-    average=total_rating/nbr_rating
-    return average
+assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
+assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == min([1478, 2, 5, 4, 78, 511, -1478])
+
+assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
+assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
+
+assert moyenne([1,2,3,5,8,45])==mean([1,2,3,5,8,45])
+assert moyenne([1,2,3,5,8,45])==moyenne2([1,2,3,5,8,45])
+assert moyenne_coef([[12,4],[10,1],[14,3]]) == 12.5
+assert moyenne_coef([[12,4],['abs',5],[14,4]]) == moyenne_coef([[12,4],[14,4]])
+assert moyenne_coef2([[12,4],['abs',5],[14,4]]) == moyenne_coef2([[12,4],[14,4]])
+assert moyenne_coef2([[12,4],[10,1],[14,3]]) == 12.5
