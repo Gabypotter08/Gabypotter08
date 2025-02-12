@@ -56,12 +56,73 @@ def tri_ok(liste:list, c:bool=True)->bool:
                 return False
     return True
 
+def maximum(liste:list)->float:
+    """
+    Renvoie la valeur maxi d'une liste de valeurs numériques
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if liste[i] > retour:
+                retour = liste[i]
+    return retour
+
+def minimum(liste:list)->float:
+    """
+    Renvoie la valeur mini d'une liste de valeurs numériques
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if liste[i] < retour:
+                retour = liste[i]
+    return retour
+
+def extrmum(liste:list, m:bool=True)->float:
+    """
+    Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
+    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    """
+    assert len(liste)>0, "La liste est vide"
+    retour = liste[0]
+    for i in range(len(liste)):
+        try:
+            liste[i] =float(liste[i]) #essaie de convertir la valeur en float
+        except:
+            continue #si impossible, on passe à la valeur suivante dans la liste
+
+        if m: #On cherche le maximum
+            if liste[i] > retour:
+                    retour = liste[i]
+        else: #On cherche le minimum
+            if liste[i] < retour:
+                    retour = liste[i]
+    return retour
+
+
+
+
+
 assert tri_ok([1,4,5,6,12,74]) == True
 assert tri_ok([1,4,5,6,12,-4]) == False
 assert tri_ok([1,4,5,6,12,74],c=False) == False
 assert tri_ok([11,4,-5,-6,-12,-74],c=False) == True
 
+assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', 1478]) == 1478
 
+assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
+
+"""
 def max_min(liste:list, a:bool=True)->float:
     """
     revoie le maximum ou le minimum d'une liste
@@ -93,3 +154,4 @@ def moyenne(liste:list):
         somme_notes+=liste[i]
     moyenne=somme_notes/nbr_notes
     return moyenne
+"""
