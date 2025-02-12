@@ -88,7 +88,7 @@ def minimum(liste:list)->float:
                 retour = liste[i]
     return retour
 
-def extrmum(liste:list, m:bool=True)->float:
+def extremum(liste:list, m:bool=True)->float:
     """
     Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
     Si m==True, rnvoie la maxi si m==False, renvoi le mini
