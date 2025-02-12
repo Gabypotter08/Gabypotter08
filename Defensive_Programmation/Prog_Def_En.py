@@ -7,7 +7,7 @@ Defensive programming and good practice in python
 Exemples with : Verify if a list is sort, look for the max and min, everage calculation
 """
 
-def tri_ok(liste:list, c:bool=True)->bool:
+def sort_ok(liste:list, c:bool=True)->bool:
     #DOCSTRINGS
     """
     Give back True if the list is sort from least to most
@@ -26,9 +26,9 @@ def tri_ok(liste:list, c:bool=True)->bool:
 
 def maximum(liste:list)->float:
     """
-    Renvoie la valeur maxi d'une liste de valeurs numériques
+    Give back the biggest value
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     retour = liste[0]
     for i in range(len(liste)):
         try:
@@ -42,9 +42,9 @@ def maximum(liste:list)->float:
 
 def minimum(liste:list)->float:
     """
-    Renvoie la valeur mini d'une liste de valeurs numériques
+    Give back the smallest value
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     retour = liste[0]
     for i in range(len(liste)):
         try:
@@ -56,12 +56,12 @@ def minimum(liste:list)->float:
                 retour = liste[i]
     return retour
 
-def extremum(liste:list, m:bool=True)->float:
+def peak(liste:list, m:bool=True)->float:
     """
-    Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
-    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    Give back le biggest or smallest value
+    If m==True, give back the biggest, if m==False, give back the smallest
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     retour = liste[0]
     for i in range(len(liste)):
         try:
@@ -79,11 +79,11 @@ def extremum(liste:list, m:bool=True)->float:
 
 
 
-def moyenne(liste:list)->float:
+def mean(liste:list)->float:
     """
-    Renvoie la moyenne des valeurs d'une liste
+    Give back the mean of a list of value
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     total=0
     for i in range(len(liste)):
         try:
@@ -93,15 +93,15 @@ def moyenne(liste:list)->float:
         total+= liste[i]
     return total/len(liste)
 
-def moyenne2(liste:list)->float:
+def mean2(liste:list)->float:
     return sum(liste)/len(liste)
 
-def moyenne_coef(liste:list)->float:
+def mean_coef(liste:list)->float:
     """
-    Renvoie la moyenne coefficientée des valeursd e la liste
-    valeur de la liste = paire note, coef
+    Give back the coefficient mean of a list
+    Value of the list=mark, coef
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     total=0
     coef=0
     for i in range(len(liste)):
@@ -116,12 +116,12 @@ def moyenne_coef(liste:list)->float:
 
 
 #façon alternative de gérer les boucles for spécifique à Python
-def extremum2(liste:list, m:bool=True)->float:
+def peak2(liste:list, m:bool=True)->float:
     """
-    Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
-    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    Give back the peak value of a list
+    if m==True, give back the max, if m==False, give back the min
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     retour = liste[0]
     for val in list:
         try:
@@ -137,11 +137,11 @@ def extremum2(liste:list, m:bool=True)->float:
                     retour = val
     return retour
 
-def moyenne3(liste:list)->float:
+def mean3(liste:list)->float:
     """
-    Renvoie la moyenne des valeurs d'une liste
+    Give back the mean
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     total=0
     for note in liste:
         try:
@@ -151,12 +151,12 @@ def moyenne3(liste:list)->float:
         total+= note
     return total/len(liste)
 
-def moyenne_coef2(liste:list)->float:
+def mean_coef2(liste:list)->float:
     """
-    Renvoie la moyenne coefficientée des valeursd e la liste
-    valeur de la liste = paire note, coef
+    Give back the mean
+    value of the list = mark, coef
     """
-    assert len(liste)>0, "La liste est vide"
+    assert len(liste)>0, "list is empty"
     total=0
     coef=0
     for note,cf in liste:
@@ -170,16 +170,10 @@ def moyenne_coef2(liste:list)->float:
     return total/coef
 
 
-
-
-
-
-
-
-assert tri_ok([1,4,5,6,12,74]) == True
-assert tri_ok([1,4,5,6,12,-4]) == False
-assert tri_ok([1,4,5,6,12,74],c=False) == False
-assert tri_ok([11,4,-5,-6,-12,-74],c=False) == True
+assert sort_ok([1,4,5,6,12,74]) == True
+assert sort_ok([1,4,5,6,12,-4]) == False
+assert sort_ok([1,4,5,6,12,74],c=False) == False
+assert sort_ok([11,4,-5,-6,-12,-74],c=False) == True
 
 assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', 1478]) == 1478
 #Compare le résultat de nos fonctions avec celui des fonctions natives
@@ -188,11 +182,10 @@ assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == max([1478, 2, 5,
 assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
 assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == min([1478, 2, 5, 4, 78, 511, -1478])
 
-assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
-assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
+assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
+assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
 
-assert moyenne([1,2,3,5,8,45])==mean([1,2,3,5,8,45])
-assert moyenne([1,2,3,5,8,45])==moyenne2([1,2,3,5,8,45])
+assert mean([1,2,3,5,8,45])==mean2([1,2,3,5,8,45])
 assert moyenne_coef([[12,4],[10,1],[14,3]]) == 12.5
 assert moyenne_coef([[12,4],['abs',5],[14,4]]) == moyenne_coef([[12,4],[14,4]])
 assert moyenne_coef2([[12,4],['abs',5],[14,4]]) == moyenne_coef2([[12,4],[14,4]])
