@@ -124,36 +124,4 @@ assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
 
 assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
 assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
-"""
-def max_min(liste:list, a:bool=True)->float:
-    """
-    revoie le maximum ou le minimum d'une liste
-    Si a==True, revoie le maximum
-    Si a==False, renvoie le minimum
-    """
-    max_min=liste[0]
-    if a:
-        for i in range(len(liste)):
-            if max_min > liste[i]:
-                assert max_min>liste[i]
-            else:
-                max_min=liste[i]
-    else:
-        for i in range(len(liste)):
-            if max_min < liste[i]:
-                assert max_min<liste[i]
-            else:
-                max_min=liste[i]
-    return max_min
 
-def moyenne(liste:list):
-    """
-    Donne la moyenne d'une liste
-    """
-    nbr_notes=len(liste)
-    somme_notes=0
-    for i in range(len(liste)):
-        somme_notes+=liste[i]
-    moyenne=somme_notes/nbr_notes
-    return moyenne
-"""
