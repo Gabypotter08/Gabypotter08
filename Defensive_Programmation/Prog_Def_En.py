@@ -186,7 +186,7 @@ assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
 assert peak([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
 
 assert mean([1,2,3,5,8,45])==mean2([1,2,3,5,8,45])
-assert moyenne_coef([[12,4],[10,1],[14,3]]) == 12.5
-assert moyenne_coef([[12,4],['abs',5],[14,4]]) == moyenne_coef([[12,4],[14,4]])
-assert moyenne_coef2([[12,4],['abs',5],[14,4]]) == moyenne_coef2([[12,4],[14,4]])
-assert moyenne_coef2([[12,4],[10,1],[14,3]]) == 12.5
+assert mean_coef([[12,4],[10,1],[14,3]]) == 12.5
+assert mean_coef([[12,4],['abs',5],[14,4]]) == mean_coef([[12,4],[14,4]])
+assert mean_coef2([[12,4],['abs',5],[14,4]]) == mean_coef2([[12,4],[14,4]])
+assert mean_coef2([[12,4],[10,1],[14,3]]) == 12.5
