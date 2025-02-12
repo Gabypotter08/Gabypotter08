@@ -98,7 +98,7 @@ def moyenne2(liste:list)->float:
 
 def moyenne_coef(liste:list)->float:
     """
-    Renvoie la moyenne coefficientée des valeursd e la liste
+    Renvoie la moyenne coefficientée des valeurs de la liste
     valeur de la liste = paire note, coef
     """
     assert len(liste)>0, "La liste est vide"
@@ -119,7 +119,7 @@ def moyenne_coef(liste:list)->float:
 def extremum2(liste:list, m:bool=True)->float:
     """
     Renvoie la valeur maxi ou mini d'une liste de valeurs numériques
-    Si m==True, rnvoie la maxi si m==False, renvoi le mini
+    Si m==True, renvoie la maxi si m==False, renvoi le mini
     """
     assert len(liste)>0, "La liste est vide"
     retour = liste[0]
@@ -153,7 +153,7 @@ def moyenne3(liste:list)->float:
 
 def moyenne_coef2(liste:list)->float:
     """
-    Renvoie la moyenne coefficientée des valeursd e la liste
+    Renvoie la moyenne coefficientée des valeurs de la liste
     valeur de la liste = paire note, coef
     """
     assert len(liste)>0, "La liste est vide"
