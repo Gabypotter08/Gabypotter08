@@ -122,6 +122,8 @@ assert maximum([1478, 2, 5, 4, 78, "-98", 511, 'er', 1478]) == 1478
 
 assert minimum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == -1478
 
+assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478]) == 1478
+assert extremum([1478, 2, 5, 4, 78, "-98", 511, 'er', -1478], m=False) == -1478
 """
 def max_min(liste:list, a:bool=True)->float:
     """
