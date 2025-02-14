@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sélection de couleur</title>
+    <title>Choose the color</title>
     <style type="text/css">
-#coul {
+#col {
   background: rgb(204, 204, 204);
   width: 100px;
   height: 100px;
-} /* #coul est un identifient*/
+}
     </style>
 </head>
 <body id="page">
 
     <div>
-        <h3>Sélectionner la couleur</h3>
+        <h3>Choose the color</h3>
         <input type="range" min="0" max="255" value="150" id="rouge"/>
         <input type="range" misn="0" max="255" value="50" id="vert"/>
         <input type="range" min="0" max="255" value="250" id="bleu"/>
@@ -30,12 +30,11 @@
         Bleu: <input type="text" name="b" id="b"/>
         </p>
         <p>
-        <button id="bouton">Appliquer</button>
+        <button id="bouton">Change</button>
         </p>
     </form>
-    <div id="coul"></div>
+    <div id="col"></div>
 
-    <script language="javascript" type="text/javascript" src="exopages.js"></script>
 <script>
 document.getElementById("bouton").onclick = function couleur(){
 			let entreeR = document.getElementById("r");
@@ -44,7 +43,7 @@ document.getElementById("bouton").onclick = function couleur(){
 			let v = entreeV.value;
 			let entreeB = document.getElementById("b");
 			let b = entreeB.value;
-			document.getElementById("coul").style.background = "rgb(" +r+ "," +v+ "," +b+ ")";
+			document.getElementById("col").style.background = "rgb(" +r+ "," +v+ "," +b+ ")";
 			
 			return false;
 		}
