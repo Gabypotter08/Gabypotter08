@@ -15,6 +15,7 @@ def fahrenheit(valeur_celsius:int=0)->float:
     valeur_fahrenheit=(valeur_celsius* 9/5) + 32 
     return valeur_fahrenheit
 
+
 def miles(valeur_km:int=0)-> float:
     """
     convertir kilomètres en miles
@@ -28,3 +29,18 @@ def km(valeur_miles:int=0)-> float:
     """
     valeur_km=valeur_miles*1,609
     return valeur_km
+
+
+def livre(val_kg:int=0)-> float:
+    """
+    convertir kilogrammes en livres
+    """
+    val_livres=val_kg/2,205
+    return val_livres
+    
+def kg(val_livres:int=0)-> float:
+    """
+    convertir livres en kilogrammes
+    """
+    val_kg=val_livres*2,205
+    return val_kg
