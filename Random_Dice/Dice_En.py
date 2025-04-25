@@ -3,14 +3,14 @@
 
 from random import *
 
-def dice(nbr_faces:int=6, nbr_lance:int = 1): 
+def dice(nbr_sides:int=6, nbr_throw:int = 1): 
     """
     function to simulate a dice
     """
-    liste_result=[] 
-    for i in range(nbr_lance): 
-        liste_result.append(randint(1, nbr_faces)) 
-    return liste_result 
+    result=[] 
+    for i in range(nbr_throw): 
+        result.append(randint(1, nbr_sides)) 
+    return result 
 
 faces = input('How many faces do your dice have? ') 
 face = int(faces) 
