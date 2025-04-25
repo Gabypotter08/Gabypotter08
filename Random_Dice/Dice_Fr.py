@@ -3,14 +3,14 @@
 
 from random import *
 
-def dice(nbr_faces:int=6, nbr_lance:int = 1): 
+def dice(nbr_side:int=6, nbr_throw:int = 1): 
     """
     fonction qui simule un lancé de dé
     """
-    liste_result=[] 
-    for i in range(nbr_lance): 
-        liste_result.append(randint(1, nbr_faces)) 
-    return liste_result 
+    result=[] 
+    for i in range(nbr_throw): 
+        liste_result.append(randint(1, nbr_side)) 
+    return result 
 
 faces = input('Combien de faces à votre dé ? ') 
 face = int(faces) 
